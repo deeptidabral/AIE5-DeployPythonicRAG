@@ -168,6 +168,29 @@ Simply put, this downloads the file as a temp file, we load it in with `TextFile
 
 Why do we want to support streaming? What about streaming is important, or useful?
 
+<div style="background-color: #E6E6FA; padding: 10px; border-radius: 5px;">
+<span style="color: black;">
+
+* **ANSWER:**  
+
+We want to support streaming because it allows us to respond to the user in real-time. This is important because it allows us to provide a more interactive experience for the user.
+
+1. Improved User Experience due to faster responses: Streaming allows the model to begin generating an answer immediately, significantly reducing perceived wait time significantly reducing the latency otherwise very high in traditional QA systems.  
+
+2. Incremental Information Delivery: Users receive responses in real-time as they are generated, particularly useful when responses are long, as users can start digesting information while the rest is still being processed.  
+
+3. Handling Large Outputs: Streaming makes it feasible to deliver large answers without overwhelming memory or network bandwidth.  
+
+4. Interactive User Experience: Real-time feedback in chatbots makes interactions feel natural.   
+
+5. Optimized Resource Utilization: Streaming reduces the need for storing large intermediate results in memory before delivering them.  
+
+6. Enables Complex Reasoning and Refinement: RAG needs to fetch multiple documents and reason across them. Streaming allows it to output its thought process step-by-step, making it more transparent and potentially allowing for dynamic refinements.  
+
+</span>
+</div>
+
+
 ### On Chat Start:
 
 The next scope is where "the magic happens". On Chat Start is when a user begins a chat session. This will happen whenever a user opens a new chat window, or refreshes an existing chat window.
@@ -209,6 +232,26 @@ Now, we'll save that into our user session!
 #### ❓ QUESTION #2: 
 
 Why are we using User Session here? What about Python makes us need to use this? Why not just store everything in a global variable?
+
+<div style="background-color: #E6E6FA; padding: 10px; border-radius: 5px;">
+<span style="color: black;">
+
+* **ANSWER:**  
+
+Using User Session is necessary in Python web applications to ensure data isolation, prevent race conditions, and enable scalability. Unlike global variables, which are shared across all users and threads, sessions provide a per-user storage mechanism that aligns with how web servers handle requests in parallel.  
+
+Following are the advantages of using user session:
+
+(1) User-specific state management: Global variables are shared across all users, meaning data from one user could unintentionally be accessed or modified by another.  
+
+(2) Thread safety: Most web frameworks (e.g., Flask, FastAPI, Django) handle multiple requests simultaneously using threads or worker processes. A global variable would create race conditions where multiple users might overwrite or corrupt shared data.  
+
+(3) Statelessness and Scalability: Web applications, especially distributed ones, need to scale horizontally (across multiple servers or containers). Using a global variable would not persist data across different instances of the application.  
+
+(4) Garbage collection and memory leaks: Global variables persist beyond a single request, leading to potential memory issues if not properly managed.
+
+</span>
+</div>
 
 ### On Message
 
@@ -330,6 +373,8 @@ Try uploading a text file and asking some questions!
 Upload a PDF file of the recent DeepSeek-R1 paper and ask the following questions:
 
 1. What is RL and how does it help reasoning?
+
+
 2. What is the difference between DeepSeek-R1 and DeepSeek-R1-Zero?
 3. What is this paper about?
 
