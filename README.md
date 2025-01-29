@@ -373,12 +373,32 @@ Try uploading a text file and asking some questions!
 Upload a PDF file of the recent DeepSeek-R1 paper and ask the following questions:
 
 1. What is RL and how does it help reasoning?
-
-
 2. What is the difference between DeepSeek-R1 and DeepSeek-R1-Zero?
 3. What is this paper about?
 
 Does this application pass your vibe check? Are there any immediate pitfalls you're noticing?
+
+![image](images/DeepSeek-R1_Answer1.png)
+
+1. It is a technical response maintains a professional tone suitable for an audience familiar with AI and reinforcement learning.  
+2. It provides a high-level explanation of RL and its application to reasoning without getting too verbose.  
+
+![image](images/DeepSeek-R1_Answer2.png)
+
+1. While the response is informative, well-structured providing a detailed technical comparison, and comprehensive by touching on multiple aspects (performance, training method, language support), it lacks an engaging and welcoming tone.  
+2. Including a few examples or analogies would make it more comprehensible and intuitive.
+
+![image](images/DeepSeek-R1_Answer3.png)
+
+1. This response lacks depth, engagement, and any attempt to assist the user. It leaves the user without direction or alternatives, which can be frustrating.  
+2. It is too short and uninformative with no context or effort to provide additional help.  
+3. It lacks an attempt to assist the user by summarizing the paper, suggesting ways to find an answer, or asking for clarification.  
+
+Therefore, overall, it leads to poor user experience. 
+
+<b> Changing the prompt to asking for explicit summary as shown below yields a much better response. </b>
+
+![image](images/DeepSeek-R1_Answer3.1.png)
 
 ## 🚧 CHALLENGE MODE 🚧
 
